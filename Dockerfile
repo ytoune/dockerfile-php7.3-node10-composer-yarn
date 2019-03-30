@@ -2,7 +2,7 @@ FROM php:7.3-apache
 
 RUN (curl -sL https://deb.nodesource.com/setup_10.x | bash) && \
   apt-get update && \
-  apt-get install -y git nodejs libicu-dev libpng-dev && \
+  apt-get install -y git nodejs libicu-dev libpng-dev libzip-dev && \
   a2enmod rewrite && \
   docker-php-ext-install gd pdo_mysql intl bcmath zip && \
   service apache2 restart && \
